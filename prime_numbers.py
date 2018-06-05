@@ -1,30 +1,21 @@
-#all of this works. But I think it can go faster.
-#Prime number stuff has to be brute force at some level,
-#but surely there's room for optimization.
+#Just some little stuff, add mroe if needed
 
-def generatePrimeString (start, showsProgress):
-    result = ""
-    while start != 1:
-        for x in range (2, 99999999):
-            if (showsProgress & (x % 1000000 == 0)):
-                print "Checking past " + str(x) + "..."
-            if (start % x == 0):
-                if (showsProgress):
-                    print "Found factor: " + str(x) + ", now parsing " + str(start/x)
-                if ((start / x) == 1):
-                    result += str(x)
-                else:
-                    result += str(x) + "x"
-                start = start / x
-                break
-    return result
+def primeFactors(n):
+    i = 2
+    factors = []
+    while i * i <= n:
+        if n % i:
+            i += 1
+        else:
+            n //= i
+            factors.append(i)
+    if n > 1:
+        factors.append(n)
+    return factors
+
+def isPrime(numb):
+    return len(primeFactors(numb)) == 1
 
 
-def isPrime(z):
-    return (generatePrimeString(z, False) == str(z))
-
-def numberOfFactors(q):
-    return generatePrimeString(q, False).count("x")
-
-print isPrime(11)
-print numberOfFactors(11)
+for x in range (0, 9999):
+    print isPrime(x)
