@@ -11,13 +11,15 @@ populated with misc. data now.
 caesar_and_rot13:
 
 As it sounds. Three methods, a caesar encrypter / decrypter, a rot13 (which is
-a caesar with a shift of 13), and a brute force shifter to do all 26 shifts at once.
+a caesar with a shift of 13), and a brute force shifter to do all 26 shifts at
+once.
 
 monoalphabetic_substitution_cipher:
 
 This program has three "helper" methods, because these can be tough to solve.
 A character frequency analyzer, a doubles analyzer, and a word counter, all
-things that come in handy when trying to solve monoalphabetic substitution ciphers.
+things that come in handy when trying to solve monoalphabetic substitution
+ciphers.
 
 ncl_python_reverse_engineer:
 
@@ -26,8 +28,8 @@ a program I wrote that makes it easy to deconstruct in a hurry.
 
 pascal_triangle:
 
-Ok, not that useful, but just a fun exercise in recusrion from my first high school
-CS class.
+Ok, not that useful, but just a fun exercise in recusrion from my first high
+school CS class.
 
 prime_numbers:
 
@@ -36,6 +38,13 @@ to math of prime numbers, who could have guessed.
 
 vigenere_cipher:
 
-Another quick decryption program. the Vigenere cipher was created as an upgrade
-from the easily brute forcable caesar cipher by using multiple different shifts,
-allowing a now infinite number of keys (keys can be any length).  
+a fairly specific cipher. Can't be brute forced as easily as a caesar.
+
+rail_fence:
+
+geometric-based cipher
+
+nato_phonetic:
+
+Converts text into and out of the NATO phonetic alphabet. I'm questioning whether
+or not all of these programs really need a readme.
