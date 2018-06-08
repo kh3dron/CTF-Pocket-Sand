@@ -26,7 +26,6 @@ def identifyMessageCase(text):
             return upper
         else:
             check += 1
-
 clearText = identifyMessageCase(given)
 
 

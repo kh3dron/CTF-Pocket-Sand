@@ -2,16 +2,8 @@
 
 #Paste your cyphertext as follows, leave whatever formatting.
 given = """
+alp gwcsepul gtavaf, nlv prgpbpsu mb h jcpbyvdlq, ipltga rv glniypfa we ekl 16xs nsjhlcb. px td o lccjdstslpahzn fptspf xstlxzi te iosj ezv sc xcns ttsoic lzlvrmhaw ez sjqijsa xsp rwhr. tq vxspf sciov, alp wsphvcv pr ess rwxpqlvp nwlvvc dyi dswbhvo ef htqtafvyw hqzfbpg, ezutewwm zcep xzmyr o scio ry tscoos rd woi pyqnmgelvr vpm . qbctnl xsp akbflowllmspwt nlwlpcg, lccjdstslpahzn fptspfo oip qvx dfgysgelipp ec bfvbxlrnj ojocjvpw, ld akfv ekhr zys hskehy my eva dclluxpih yoe mh yiacsoseehk fj l gebxwh sieesn we ekl iynfudktru. xsp yam zd woi qwoc.
 
-envgyva'f punyyratr qp25
-
-gur svefg grnz gb pbzcyrgr
-gur punyyratr jvyy erprvir
-na vaivgngvba gb gur vc
-qp26 ubfcvgnyvgl fhvgr.
-
-qrpbqr gur zrffntr orybj
-gb ortva. tbbq yhpx!
 """
 
 def identifyMessageCase(text):

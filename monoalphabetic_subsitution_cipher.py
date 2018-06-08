@@ -5,14 +5,7 @@ simpleLetters =     ("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 replacedWith =      ("abcdefghijklmnopqrstuvwxyz")
 inputText = """
 
-EVA KRC BEOA TRNZEVA CPR BWTFCOWV OB DK VW UREVB BW AOLLOGFTC EB KWF UONPC DR
-TRA CW OUENOVR LZWU CPR LOZBC PEBCK OVBXRGCOWV WL CPR GPEZEGCRZB CPRBR
-GPEZEGCRZB EB EVK WVR UONPC ZREAOTK NFRBB LWZU E GOXPRZ CPEC OB CW BEK CPRK
-GWVHRK E UREVOVN DFC CPRV LZWU IPEC OB SVWIV WL SOAA O GWFTA VWC BFXXWBR POU
-GEXEDTR WL GWVBCZFGCOVN EVK WL CPR UWZR EDBCZFBR GZKXCWNZEXPB O UEAR FX
-UK UOVA EC WVGR CPEC CPOB IEB WL E BOUXTR BXRGORB BFGP PWIRHRZ EB IWFTA EXXREZ CW
-CPR GZFAR OVCRTTRGC WL CPR BEOTWZ EDBWTFCRTK OVBWTFDTR IOCPWFC CPR SRK
-LZWU CPR NWTA DFN DK RANEZ ETTEV XWR
+alp gwcsepul gtavaf, nlv prgpbpsu mb h jcpbyvdlq, ipltga rv glniypfa we ekl 16xs nsjhlcb. px td o lccjdstslpahzn fptspf xstlxzi te iosj ezv sc xcns ttsoic lzlvrmhaw ez sjqijsa xsp rwhr. tq vxspf sciov, alp wsphvcv pr ess rwxpqlvp nwlvvc dyi dswbhvo ef htqtafvyw hqzfbpg, ezutewwm zcep xzmyr o scio ry tscoos rd woi pyqnmgelvr vpm . qbctnl xsp akbflowllmspwt nlwlpcg, lccjdstslpahzn fptspfo oip qvx dfgysgelipp ec bfvbxlrnj ojocjvpw, ld akfv ekhr zys hskehy my eva dclluxpih yoe mh yiacsoseehk fj l gebxwh sieesn we ekl iynfudktru. xsp yam zd woi qwoc.
 
 """
 
@@ -22,6 +15,23 @@ Look for doubles that appear- corellate to SS, EE, TT, FF, LL, MM, OO
 """
 
 outputText = ""
+
+
+def identifyMessageCase(text):
+
+    lower = "abcdefghijklmnopqrstuvwxyz"
+    upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    check = 0
+    completed = False
+    while not completed:
+        if text[check] in lower:
+            return lower
+        elif text[check] in upper:
+            return upper
+        else:
+            check += 1
+
+simpleLetters = identifyMessageCase(inputText)
 
 def showReplaced (dirty, clean):
   for x in dirty:
@@ -34,6 +44,7 @@ def showReplaced (dirty, clean):
   print ""
 
 def frequencyAnalysis(text):
+
     placements = []
     for x in range(0, 26):
         placements.append(0)
@@ -42,9 +53,16 @@ def frequencyAnalysis(text):
         if (letter in simpleLetters):
             placements[simpleLetters.index(letter)-1] += 1
 
+
     print "Letter occurences in input text:"
     for z in range(0, 26):
-        print str(simpleLetters[z]) + " : " + str(placements[z])
+
+        bar = ""
+        for r in range (0, placements[z]):
+            bar += "X"
+        print str(simpleLetters[z]) + " : " + str(placements[z]), bar
+
+
     print ""
 
 def countDoubles(text):
@@ -73,6 +91,8 @@ def findThreeLetterWords(text):
     for each in found:
         print each
     print ""
+
+
 
 #Chances are you'll be runnign showReplaced every time you test a dictionary, so
 #comment out those others and call them when you need the data
