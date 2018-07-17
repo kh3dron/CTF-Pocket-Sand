@@ -17,5 +17,8 @@ def isPrime(numb):
     return len(primeFactors(numb)) == 1
 
 
-for x in range (0, 9999):
-    print isPrime(x)
+
+with open('ciphertext.txt') as f:
+  ciphertext = f.read()
+
+print ciphertext

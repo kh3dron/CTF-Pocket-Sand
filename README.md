@@ -1,50 +1,12 @@
 # CTF Pocket Sand
+By Khedron
 
-Programs I've written here and there for simple tasks. They always get lost in
-different folders across machines, so now I won't have to go digging for them
-or rewrite them every time I need them.
+![pocket sand](./references/pocket-sand-gif.gif)
 
-They're meant to be opened up and fiddled with, and are often modified to fit
-the exact needs of the puzzle I'm working on. That's why they're partially
-populated with misc. data now.
+A collection of useful little python scripts for when you just need to throw a quick handful of sand at a problem. The majority of these are 
 
-caesar_and_rot13:
+1. Cryptography related (rail_fence, viginere_cipher) 
+2. CTF types of tasks and utilities (RSA)
+3. Miscellaneous scripts for personal practice or fun (prime_numbers, change). 
 
-As it sounds. Three methods, a caesar encrypter / decrypter, a rot13 (which is
-a caesar with a shift of 13), and a brute force shifter to do all 26 shifts at
-once.
-
-monoalphabetic_substitution_cipher:
-
-This program has three "helper" methods, because these can be tough to solve.
-A character frequency analyzer, a doubles analyzer, and a word counter, all
-things that come in handy when trying to solve monoalphabetic substitution
-ciphers.
-
-ncl_python_reverse_engineer:
-
-The NCL contest always has this same strange python program to take apart. Here's
-a program I wrote that makes it easy to deconstruct in a hurry.
-
-pascal_triangle:
-
-Ok, not that useful, but just a fun exercise in recusrion from my first high
-school CS class.
-
-prime_numbers:
-
-Haven't had to use this yet, but probably will sooner or later. Methods relating
-to math of prime numbers, who could have guessed.
-
-vigenere_cipher:
-
-a fairly specific cipher. Can't be brute forced as easily as a caesar.
-
-rail_fence:
-
-geometric-based cipher
-
-nato_phonetic:
-
-Converts text into and out of the NATO phonetic alphabet. I'm questioning whether
-or not all of these programs really need a readme.
+For Cryptography related files, most pull their ciphertext or input text from the "ciphertext" file in the references folder. Populate that file with your data before running cryptography programs.  

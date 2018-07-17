@@ -1,8 +1,5 @@
-given = """
-
-ACH! SAVE ME FROM THE WEE TURTLES!
-
-"""
+with open('ciphertext.txt') as f:
+  ciphertext = f.read()
 
 def identifyMessageCase(text):
 
@@ -18,7 +15,7 @@ def identifyMessageCase(text):
         else:
             check += 1
 
-clearText = identifyMessageCase(given)
+clearText = identifyMessageCase(ciphertext)
 
 def railFence(text):
     top, bottom = "", ""    #never knew I could do this
@@ -46,4 +43,4 @@ def spaceByFives(text):
 
 
 
-print spaceByFives(railFence(given))
+print spaceByFives(railFence(ciphertext))

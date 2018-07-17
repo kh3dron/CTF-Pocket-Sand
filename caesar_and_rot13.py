@@ -13,6 +13,9 @@ DCDC - HYYWDWG
 ZGHF GCYWNBAJONSCGCYJBIHNWI
 """
 
+with open('ciphertext.txt') as f:
+    ciphertext = f.read()
+
 def identifyMessageCase(text):
 
     lower = "abcdefghijklmnopqrstuvwxyz"
@@ -26,15 +29,14 @@ def identifyMessageCase(text):
             return upper
         else:
             check += 1
-
-clearText = identifyMessageCase(given)
+letters = identifyMessageCase(ciphertext)
 
 
 def caesar(numb):
     out = ""
-    for letter in given:
-        if letter in clearText:
-            out += clearText[(clearText.index(letter) + numb) % 26]
+    for letter in ciphertext:
+        if letter in letters:
+            out += letters[(letters.index(letter) + numb) % 26]
         else:
             out += letter   #Don't touch other chars for formatting
     return out

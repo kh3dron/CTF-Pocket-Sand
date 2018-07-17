@@ -2,53 +2,35 @@ readme = """
 I'm doing most of my work here, eventually I'll combine most of my corebreaking
 programs in this one spot. Doing some brute forcing, but now with a wordlist
 checker, so methods can tell when they're closer to a real message.
+
+note: this file is currently broken
 """
 
 
 #Wordlist! Big money now.
 words = None
-with open('words') as f:
+with open('./references/words') as f:
   words = f.read().splitlines()
 
+print words
 key = ""    #I realize I should scrub these
 
 #This given is baked in to alot of methods, worth changing that later
-given = """
-ktv hzsvzvdv ozbyqi, ire zzmqefvp sk r riqeoyyrz, sxrujq uq muxqeqiq zz ktv 16fy
-ovzkgik. zf ze r bfxpmcbymsqkut ozbyqi nvorgjq zf leve kif ai yfdv ozbyqi
-mcbymsqke ka vztdpbk fyq umkm. zz ffyqi ifdue, ktv xvfkqie zz ktv hzsvzvdv
-ozbyqi miq jtzrkqu np pzrwqiqef ryfgefj, zfddmcxp pfzv gjues r ifdu ai bydrev
-mj fyq vztdpbkufz bqp . gexzwv fyq daearxgtrnvfzo tugtvdj, bfxpmcbymsqkut
-ozbyqie rdv zff jgjovbkusxv ff riqhgvztk rzrxpeze, re daiq ktrz fzv xvfkqi
-ue fyq gxruefvjk orz sq iqgdvevzkqu np m juescq cqkfvd zz ktv qeoikgfzae. fyq
-bqp uj fyq wxrs.
-"""
+with open('ciphertext.txt') as f:
+  ciphertext = f.read()
 
-
-def identifyMessageCase(text):
-    lower = "abcdefghijklmnopqrstuvwxyz"
-    upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    check = 0
-    completed = False
-    while not completed:
-        if text[check] in lower:
-            return lower
-        elif text[check] in upper:
-            return upper
-        else:
-            check += 1
-
-clearText = identifyMessageCase(given)
-keyCaseStores = identifyMessageCase(key)
+#CAPITALIZE THINGS PLEASE
+clearText = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+keyCaseStores = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 def vigenere_shift(key, encodeOrDecode):
     bounces = []
-    while (len(bounces) < len(given)):
+    while (len(bounces) < len(ciphertext)):
         for each in key:
             bounces.append(keyCaseStores.index(each)+1)
     result = ""
     tick = 0
-    for term in given:
+    for term in ciphertext:
         if (term in clearText):
 
             if (encodeOrDecode == "Encode"):
